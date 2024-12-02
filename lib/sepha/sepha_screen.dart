@@ -23,7 +23,7 @@ class _SephaScreenState extends State<SephaScreen> {
           fit: BoxFit.fill,
         ),
         Padding(
-          padding: const EdgeInsets.only(top: 100),
+          padding: const EdgeInsets.only(top: 150),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
