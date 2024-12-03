@@ -23,7 +23,7 @@ class _SephaScreenState extends State<SephaScreen> {
           fit: BoxFit.fill,
         ),
         Padding(
-          padding: const EdgeInsets.only(top: 150),
+          padding: const EdgeInsets.only(top: 120),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -34,7 +34,7 @@ class _SephaScreenState extends State<SephaScreen> {
                     fontWeight: FontWeight.w700,
                     color: Colors.white),
               ),
-              const SizedBox(height: 100),
+              const SizedBox(height: 70),
               Stack(
                 clipBehavior: Clip.none,
                 children: [
@@ -67,9 +67,6 @@ class _SephaScreenState extends State<SephaScreen> {
                     ),
                   ),
                 ],
-              ),
-              const SizedBox(
-                height: 30,
               ),
               Column(
                 children: [

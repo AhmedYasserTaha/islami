@@ -20,24 +20,35 @@ android {
     }
 
     defaultConfig {
-        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId = "com.example.islami_app"
-        // You can update the following values to match your application needs.
-        // For more information, see: https://flutter.dev/to/review-gradle-config.
         minSdk = flutter.minSdkVersion
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
         versionName = flutter.versionName
     }
 
+    signingConfigs {
+        release {
+            storeFile file("D:/blackhorescourses/flutter/islami_app/my-release-key.jks") // مسار الـ keystore
+            storePassword "123456789" // كلمة مرور الـ keystore
+            keyAlias "my_key_alias" // alias الخاص بالمفتاح
+            keyPassword "123456789" // كلمة مرور المفتاح
+        }
+    }
+
     buildTypes {
         release {
-            // TODO: Add your own signing config for the release build.
-            // Signing with the debug keys for now, so `flutter run --release` works.
-            signingConfig = signingConfigs.debug
+            // تفعيل تقليل الحجم باستخدام ProGuard
+            shrinkResources true    // إزالة الموارد غير المستخدمة
+            minifyEnabled true      // تقليص الأكواد باستخدام ProGuard
+
+            // إعدادات التوقيع (التوقيع باستخدام مفاتيح release وليس debug)
+            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
 }
+
 
 flutter {
     source = "../.."
